@@ -6,7 +6,7 @@ import {
 import { Container, Header, Title, Content, Button, Left, Right, Body, Icon } from 'native-base';
 
 
-export default class Home extends Component {
+export default class Bills extends Component {
 
 
   constructor(props) {
@@ -33,7 +33,7 @@ export default class Home extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>Home</Title>
+            <Title>Bills</Title>
           </Body>
           <Right />
         </Header>
@@ -44,12 +44,12 @@ export default class Home extends Component {
   }
 }
 
-Home.navigationOptions = {
+Bills.navigationOptions = {
   drawer: () => ({
-    label: 'Home',
+    label: 'Bills',
   }),
 };
 
-Home.propTypes = {
+Bills.propTypes = {
   navigation: React.PropTypes.object.isRequired,
 };
