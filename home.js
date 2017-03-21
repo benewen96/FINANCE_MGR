@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import {
-  Text,
-} from 'react-native';
 
-import { Container, Header, Title, Content, Button, Left, Right, Body, Icon } from 'native-base';
+
+import { Container, Header, Title, Content, Button, Left, Right, Body, Icon, Card, CardItem, Text, ListItem } from 'native-base';
 
 
 export default class Home extends Component {
@@ -26,6 +24,7 @@ export default class Home extends Component {
   render() {
     return (
       <Container>
+
         <Header>
           <Left>
             <Button transparent onPress={this.openDrawer}>
@@ -37,7 +36,57 @@ export default class Home extends Component {
           </Body>
           <Right />
         </Header>
-        <Content />
+
+        <Content>
+
+          <Card>
+            <CardItem bordered>
+              <Icon name="card" />
+              <Text>Take hold of your finances</Text>
+            </CardItem>
+
+            <CardItem>
+              <Body>
+                <Text>
+                  Managing your daily finances can be a time-consuming and tedious task. {'<'}app name{'>'} takes the hassle out of keeping track of your
+                  bills, savings, taxes and helps you make your spending more predictable and manageable.
+                </Text>
+              </Body>
+            </CardItem>
+          </Card>
+
+          <Card>
+            <CardItem bordered >
+              <Icon name="calendar" />
+              <Text>Todays summary</Text>
+            </CardItem>
+
+            <ListItem icon>
+              <Left>
+                <Icon name="cash" />
+              </Left>
+              <Body>
+                <Text>Spent today</Text>
+              </Body>
+              <Right>
+                <Text>£15</Text>
+              </Right>
+            </ListItem>
+            <ListItem icon>
+              <Left>
+                <Icon name="paper" />
+              </Left>
+              <Body>
+                <Text>Monzo balance</Text>
+              </Body>
+              <Right>
+                <Text>£38.47</Text>
+              </Right>
+            </ListItem>
+          </Card>
+
+        </Content>
+
       </Container>
 
     );
