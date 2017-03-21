@@ -22,6 +22,7 @@ export default class Home extends Component {
   }
 
   render() {
+    console.log(this);
     return (
       <Container>
 

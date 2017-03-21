@@ -3,30 +3,25 @@
 * https://github.com/facebook/react-native
 * @flow
 */
-
 import {
   AppRegistry,
 } from 'react-native';
 
-import {
-  DrawerNavigator,
-} from 'react-navigation';
+import React from 'react';
 
-import Home from './home';
-import Income from './income';
-import Savings from './savings';
-import Bills from './bills';
-import Taxes from './taxes';
-import Projection from './projection';
+import { Provider } from 'react-redux';
+import { createStore, combineReducers } from 'redux';
 
-const FINANCE_MGR = DrawerNavigator({
-  Home: { screen: Home },
-  Income: { screen: Income },
-  Savings: { screen: Savings },
-  Bills: { screen: Bills },
-  Taxes: { screen: Taxes },
-  Projection: { screen: Projection },
-});
+import financeManager from './reducers/financeManager';
+import FinanceManager from './containers/financeManager';
+
+const reducers = combineReducers(financeManager);
+const store = createStore(reducers);
 
 
-AppRegistry.registerComponent('FINANCE_MGR', () => FINANCE_MGR);
+const App = () => (
+  <Provider store={store}>
+    <FinanceManager />
+  </Provider>
+);
+AppRegistry.registerComponent('FINANCE_MGR', () => App);
